@@ -1,0 +1,5 @@
+name: testdoc
+dependencies:
+    - python>=3.9
+    - pytest
+    - sphinx
