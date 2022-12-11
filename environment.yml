@@ -1,4 +1,7 @@
 name: testdoc
+channels:
+    - conda-forge
+    - defaults
 dependencies:
     - python>=3.9
     - pytest
@@ -7,4 +10,3 @@ dependencies:
     - nbsphinx
     - pip:
         - myst_parser
-        
