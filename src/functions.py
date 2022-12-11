@@ -15,5 +15,6 @@ def generatexy(num):
         3
     """
     x = [1,2,3,4,5,6,7,8,9,10]
-    y = [3,1,4,1,5,9,2,6,5,3]
+    radom_letters = 'claraBaley'
+    y = [ord(l) for l in radom_letters]
     return x,y
