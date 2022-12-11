@@ -1,18 +1,18 @@
-def add(a, b):
-    """Add two numbers `a` and `b`.
+def randomxy(num):
+    """generate random series of x and y for plot. 
 
     You could add a more detailed description of the function here
     if it were more complicated than simply adding two arguments.
 
     Parameters:
-        a (float): First number
-        b (float): Second number
+        num (float): number of the points
 
     Returns:
-        float: Sum of `a` and `b`
+        float: x and y
 
     Examples:
-        >>> add(1, 2)
+        >>> randomxy(1)
         3
     """
+    
     return a + b
