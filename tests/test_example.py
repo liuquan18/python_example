@@ -1,5 +1,6 @@
-import checkdoc
+import src.functions
 
 
-def test_add():
-    assert checkdoc.add(1, 2) == 3
+def test_func():
+    x,y = functions.generatexy()
+    assert x[0]==1

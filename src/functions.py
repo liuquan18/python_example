@@ -1,11 +1,11 @@
-def generatexy(num):
+def generatexy():
     """generate random series of x and y for plot. 
 
     You could add a more detailed description of the function here
     if it were more complicated than simply adding two arguments.
 
     Parameters:
-        num (float): number of the points
+        No parameters.
 
     Returns:
         float: x and y
