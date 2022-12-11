@@ -1,4 +1,4 @@
-def randomxy(num):
+def generatexy(num):
     """generate random series of x and y for plot. 
 
     You could add a more detailed description of the function here
@@ -14,5 +14,6 @@ def randomxy(num):
         >>> randomxy(1)
         3
     """
-    
-    return a + b
+    x = [1,2,3,4,5,6,7,8,9,10]
+    y = [3,1,4,1,5,9,2,6,5,3]
+    return x,y
