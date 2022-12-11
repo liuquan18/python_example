@@ -3,3 +3,8 @@ dependencies:
     - python>=3.9
     - pytest
     - sphinx
+    - pip
+    - nbsphinx
+    - pip:
+        - myst_parser
+        
