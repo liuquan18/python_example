@@ -1,9 +1,9 @@
 #%matplotlib inline
 
 import matplotlib.pyplot as plt
-import src.functions as func
+import src.data_generator as data_generator
 
-x,y = func.generatexy()
+x,y = data_generator.generatexy()
 
 print(x)
 print(y)

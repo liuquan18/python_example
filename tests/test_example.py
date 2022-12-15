@@ -1,4 +1,4 @@
-import src.functions
+import src.data_generator
 
 
 def test_func():
