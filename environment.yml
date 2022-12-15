@@ -7,8 +7,8 @@ dependencies:
     - pytest
     - sphinx
     - pip
-    - nbsphinx
     - matplotlib
     - mdutils
     - pip:
         - myst_parser
+        - nbsphinx
