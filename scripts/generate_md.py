@@ -5,7 +5,7 @@ file_name = "../docs/source/note_example.md"  # change here if the path not righ
 plot_dir = "../docs/source/plots/"
 
 try:
-    md_file = md_generator.doc_quick_plots(file_name,tile = "example note", plot_dir = plot_dir)
+    md_file = md_generator.doc_quick_plots(file_name,title = "example note", plot_dir = plot_dir)
 
 except FileNotFoundError:
     "plots not found, run `make_plot` first"

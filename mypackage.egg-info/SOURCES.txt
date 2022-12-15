@@ -8,5 +8,6 @@ mypackage.egg-info/requires.txt
 mypackage.egg-info/top_level.txt
 src/__init__.py
 src/data_generator.py
+src/md_generator.py
 tests/__init__.py
 tests/test_example.py
