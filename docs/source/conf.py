@@ -17,9 +17,9 @@ sys.path.insert(0, os.path.abspath('../..'))
 
 # -- Project information -----------------------------------------------------
 
-project = 'mypackage'
+project = 'html_example'
 copyright = '2022, mypackage developers'
-author = 'mypackage developers'
+author = 'Quan'
 
 
 # -- General configuration ---------------------------------------------------
@@ -28,9 +28,13 @@ author = 'mypackage developers'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx.ext.autodoc',
-    'sphinx.ext.autosummary',
+    "sphinx.ext.autodoc",
+    "sphinx.ext.duration",
+    "sphinx.ext.doctest",
+    "sphinx.ext.autosummary",
+    "sphinx.ext.mathjax",
     "myst_parser",
+    "nbsphinx",
 ]
 
 # Add any paths that contain templates here, relative to this directory.

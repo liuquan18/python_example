@@ -6,4 +6,6 @@ Functions
 .. autosummary::
    :toctree: _autosummary
 
-   add
+   generatexy
+   doc_quick_plots
+   
