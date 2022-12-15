@@ -5,8 +5,7 @@ import src.data_generator as data_generator
 
 x,y = data_generator.generatexy()
 
-print(x)
-print(y)
+plt.plot(x,y,'r--')
+plt.savefig("../docs/source/plots/red_line.png")
+print("fig saved")
 
-# plt.savefig("../docs/source/plots/example.png")
-# print("fig saved")
