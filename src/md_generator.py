@@ -9,15 +9,16 @@ def doc_quick_plots(file_name, title, plot_dir,):
         *title* the title in the markdown file.
         *plot_dir* the directory for the images that gonna include in the note.
     """
-    md_file = MdUtils(file_name, title=title)  # qick plots
+    md_file = MdUtils(file_name, title="")  # qick plots
+    md_file.new_header(level = 1, title = title)
 
     # overview
-    md_file.new_header(level=1, title="statistical overview")
+    md_file.new_header(level=2, title="statistical overview")
     md_file.new_paragraph("Here is a simple example show how to"
                      "generator a markdown file with python scripts"
     )
 
-    md_file.new_header(level = 1, title = 'Red Line plot')
+    md_file.new_header(level = 2, title = 'Red Line plot')
     md_file.new_line(
         md_file.new_inline_image(
             text="red",
@@ -25,7 +26,7 @@ def doc_quick_plots(file_name, title, plot_dir,):
         )
     )
 
-    md_file.new_header(level = 1, title = 'Green line plot')
+    md_file.new_header(level = 2, title = 'Green line plot')
     md_file.new_line(
         md_file.new_inline_image(
             text="green",
@@ -33,6 +34,4 @@ def doc_quick_plots(file_name, title, plot_dir,):
         )
     )
 
-    # Create a table of contents
-    md_file.new_table_of_contents(table_title='Contents', depth=2)
     md_file.create_md_file()
