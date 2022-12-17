@@ -10,7 +10,7 @@ Welcome to Flat_earth's documentation!
    :maxdepth: 2
 
    functions
-   result
+   note_example
 
 
 Indices and tables
