@@ -1,4 +1,7 @@
 
+
+
+
 # example note
 
 ## statistical overview
@@ -10,4 +13,4 @@ Here is a simple example show how togenerator a markdown file with python script
 ![red](./plots/red_line.png)
 ## Green line plot
   
-![green](./plots/red_line.png)
+![green](./plots/green_line.png)
