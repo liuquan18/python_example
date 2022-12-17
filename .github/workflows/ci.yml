@@ -30,7 +30,7 @@ jobs:
   publish:
     needs: build
     # Only publish documentation when merging into `origin/main`.`
-    if: "github.event_name == 'push' && github.ref == 'refs/heads/main'"
+    if: "github.event_name == 'push' && github.ref == 'refs/heads/main' && github.repository_owner == 'liuquan18'"
     runs-on: ubuntu-latest
     steps:
       - name: Download compiled book
