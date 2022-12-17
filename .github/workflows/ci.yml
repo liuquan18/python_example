@@ -1,45 +1,12 @@
-name: Python test
-
-on: [push, pull_request]
+name: "Pull Request Docs Check"
+on: 
+- pull_request
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash -l {0}
-    steps:
-      - uses: actions/checkout@v3
-      - uses: conda-incubator/setup-miniconda@v2
-        with:
-          # Upload entire repository
-          path: '.'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
-
-      - name: Build docs
-        run: |
-          cd docs && make html
-      - name: Archive build artifacts (i.e. documentation)
-        uses: actions/upload-artifact@v2
-        with:
-          name: docs
-          path: |
-            docs/build
-  publish:
-    needs: build
-    # Only publish documentation when merging into `origin/main`.`
-    if: "github.event_name == 'push' && github.ref == 'refs/heads/main' && github.repository_owner == 'liuquan18'"
+  docs:
     runs-on: ubuntu-latest
     steps:
-      - name: Download compiled book
-        uses: actions/download-artifact@v2
-        with:
-          name: docs
-          path: build
-      - name: Publish book on github pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: build/html
+    - uses: actions/checkout@v1
+    - uses: ammaraskar/sphinx-action@master
+      with:
+        docs-folder: "docs/"
