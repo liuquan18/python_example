@@ -10,7 +10,7 @@ x,y = data_generator.generatexy()
 # plot one
 plt.plot(x,y,'r--')
 plt.suptitle(plot_dir + "red line plot")
-plt.savefig("red_line.png")
+plt.savefig(plot_dir + "red_line.png")
 print("red fig saved")
 
 # plot two
