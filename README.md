@@ -1,8 +1,19 @@
 # Example repository (Python)
 
 This git repository is a minimal example to show how to structure a Python
-package, and how to use GitHub Actions to automatically run tests and build
+package, how to use document function to visulize your prelimilary results 
+and how to use GitHub Actions to automatically run tests and build
 documentation for your software.
+
+The example is structured as following:
+```bash
+\docs       # the directory to generate the documents
+\scripts    # your scripts to do processing or ploting.
+\src        # the codes you wanna make as your own package. 
+\test       # the codes to test the functions in `src`
+
+```
+
 
 ## Install the package
 
