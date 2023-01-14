@@ -4,7 +4,7 @@
 
 # example note
 
-## statistical overview
+## Introduction
 
 
 Here is a simple example show how togenerator a markdown file with python scripts
