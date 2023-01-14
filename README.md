@@ -76,6 +76,9 @@ python generate_md.py
 ## Step 5: build documentation
 
 Auto-generate documentation. 
+`conf.py` already incldued the necessary extentions to convert markdown files into html files. 
+`index.rst` files should be changed to include all the markdown files that you wanna convert 
+into html files. 
 ```sh
 cd docs/
 make html
