@@ -17,7 +17,7 @@ sys.path.insert(0, os.path.abspath('../..'))
 
 # -- Project information -----------------------------------------------------
 
-project = 'html_example'
+project = 'python_example'
 copyright = '2022, mypackage developers'
 author = 'Quan'
 
