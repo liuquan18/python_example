@@ -13,7 +13,7 @@ def doc_quick_plots(file_name, title, plot_dir,):
     md_file.new_header(level = 1, title = title)
 
     # overview
-    md_file.new_header(level=2, title="statistical overview")
+    md_file.new_header(level=2, title="Introduction")
     md_file.new_paragraph("Here is a simple example show how to"
                      "generator a markdown file with python scripts"
     )
