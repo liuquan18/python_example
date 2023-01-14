@@ -111,9 +111,9 @@ then run the script on levante to upload the html files onto swift.
 cd docs
 ./upload_html.sh
 ```
-You can use swiftbrowser to check the files. To make the html as a webpage, the container need be chaged into a public. 
-
-
+You can use swiftbrowser to check the files. To make the html as a webpage, the container need be chaged into a public. then the webpage is built [here](https://swift.dkrz.de/v1/dkrz_e2efc288-3ba0-499b-9bd8-d1a2580fd987/python_example/build/html/index.html) 
+> Note that the link the different from just copying the link from swift_browser. Update the link above 
+with the correct URL when you set the container on swift as public. 
 ---
 
 Further information
