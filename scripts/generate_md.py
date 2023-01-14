@@ -6,6 +6,7 @@ plot_dir = "./plots/"             # change the dir if the path not right
 
 try:
     md_file = md_generator.doc_quick_plots(file_name,title = "example note", plot_dir = plot_dir)
-
+    print("markdown files can be found in the docs-source-note_example.markdown.md")
 except FileNotFoundError:
     "plots not found, run `make_plot` first"
+
