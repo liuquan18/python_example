@@ -8,7 +8,7 @@ dependencies:
     - sphinx
     - pip
     - matplotlib
-    - mdutils
     - pip:
         - myst_parser
         - nbsphinx
+        - mdutils
