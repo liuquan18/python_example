@@ -88,10 +88,30 @@ The generated HTML files are stored in ` docs/build/html`.
 ## Step 6: upload html and build webpage
 
 Two ways to build your webpage with your prelimilary results.
+
 **The first way** is to use `GitHub Page`. This project include a [ci.yml](https://github.com/liuquan18/html_example/blob/393fdd8b83b339c7f0ea48b9a4388d8efb2678b2/.github/workflows/ci.yml#L1) to aumatically
 build the webpage. When commits are pushed or merged to the remote repository, a new version of
 the documentation is build and published on
 [GitHub pages](https://liuquan18.github.io/html_example/).
+
+**The second way** for the DKRZ users, who has the swift account on levante. the following bash files named as `upload_html.sh` could be included in the `docs` directory
+```bash
+#!/bin/bash
+# activate environment
+conda activate TelSeason
+module load py-python-swiftclient
+
+# go to 
+cd /docs
+# upload
+swift upload python_example build # change the name of the container here
+```
+then run the script on levante to upload the html files onto swift. 
+```bash
+cd docs
+./upload_html.sh
+```
+You can use swiftbrowser to check the files. To make the html as a webpage, the container need be chaged into a public. 
 
 
 ---
@@ -102,3 +122,4 @@ Further information
 * [pytest - A full-featured Python testing framewor](https://docs.pytest.org)
 * [GitHub Actions - automate your software workflows](https://github.com/features/actions)
 * [GitHub Pages - Host web sites directly from your repository](https://pages.github.com)
+* [DKRZ swift object storage](https://docs.dkrz.de/doc/datastorage/swift/index.html)
