@@ -11,6 +11,7 @@ Welcome to Python_example's documentation!
 
    functions
    note_example
+   How_to_have_this_page_too <How do I make Mine page>
 
 
 Indices and tables
