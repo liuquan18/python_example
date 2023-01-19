@@ -92,7 +92,7 @@ Two ways to build your webpage with your prelimilary results.
 **The first way** is to use `GitHub Page`. This project include a [ci.yml](https://github.com/liuquan18/html_example/blob/393fdd8b83b339c7f0ea48b9a4388d8efb2678b2/.github/workflows/ci.yml#L1) to aumatically
 build the webpage. When commits are pushed or merged to the remote repository, a new version of
 the documentation is build and published on
-[GitHub pages](https://liuquan18.github.io/html_example/).
+[GitHub pages](https://liuquan18.github.io/python_example/).
 
 **The second way** for the DKRZ users, who has the swift account on levante. the following bash files named as `upload_html.sh` could be included in the `docs` directory
 ```bash
@@ -111,9 +111,9 @@ then run the script on levante to upload the html files onto swift.
 cd docs
 ./upload_html.sh
 ```
-You can use swiftbrowser to check the files. To make the html as a webpage, the container need be chaged into a public. 
-
-
+You can use swiftbrowser to check the files. To make the html as a webpage, the container need be chaged into a public. then the webpage is built [here](https://swift.dkrz.de/v1/dkrz_e2efc288-3ba0-499b-9bd8-d1a2580fd987/python_example/build/html/index.html) 
+> Note that the link the different from just copying the link from swift_browser. Update the link above 
+with the correct URL when you set the container on swift as public. 
 ---
 
 Further information
