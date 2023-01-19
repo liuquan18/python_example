@@ -1,0 +1,232 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Example python project &#8212; python_example  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="example note" href="note_example.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="example-python-project">
+<h1>Example python project<a class="headerlink" href="#example-python-project" title="Permalink to this headline">¶</a></h1>
+<p>This repository is a minimal example to show how to structure a Python package, how to use document function to visulize your prelimilary results and how to use GitHub Actions to automatically run tests and build documentation for your software.
+<strong>To run the example project here, go to <a class="reference external" href="https://github.com/liuquan18/python_example">this GitHub project</a>, copy the link under the ‘code’ and open the example project in VS code with <code class="docutils literal notranslate"><span class="pre">Clone</span> <span class="pre">Repository</span></code> in the welcome page.</strong></p>
+<p>A well structured python project contains the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="se">\d</span>ocs               <span class="c1"># the directory to generate the documents</span>
+<span class="se">\s</span>cripts            <span class="c1"># your scripts to do processing or ploting.</span>
+<span class="se">\s</span>rc                <span class="c1"># the codes you wanna make as your own package. </span>
+<span class="se">\t</span>est               <span class="c1"># the codes to test the functions in `src`</span>
+.gitignore          <span class="c1"># tell git changes of what files are not tracked.</span>
+environment.yml     <span class="c1"># the files contain the environment configrations</span>
+LICENSE             <span class="c1"># license file (MIT)</span>
+README.md           <span class="c1"># this file</span>
+requirements.txt    <span class="c1"># the packages required to install your own package.</span>
+setup.py            <span class="c1"># to install your own package</span>
+</pre></div>
+</div>
+<div class="section" id="step-1-create-the-environment">
+<h2>Step 1: create the environment<a class="headerlink" href="#step-1-create-the-environment" title="Permalink to this headline">¶</a></h2>
+<p>Create a new environment with all dependencies and make it the active environment</p>
+<blockquote>
+<div><p>change the file<a class="reference external" href="https://github.com/liuquan18/python_example/blob/main/environment.yml"> “environment.yml”</a> here to have the proper name, and include all the packages your project needed.</p>
+</div></blockquote>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>conda env create -f environment.yml
+conda activate python_example   <span class="c1"># the name in the file</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>In VS code, the environment for the scripts can be changed by type <code class="docutils literal notranslate"><span class="pre">shift+command+p</span></code>, and type <code class="docutils literal notranslate"><span class="pre">Python:</span> <span class="pre">select</span> <span class="pre">interpreter</span></code>. The environment for the jupyter notebook can be changed with the ‘phone’ button on the right upper.</p>
+</div></blockquote>
+<p>Inspect information about the environment and list all installed packages</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>conda info
+conda list
+</pre></div>
+</div>
+</div>
+<div class="section" id="step-2-make-your-own-code-in-src-as-package">
+<h2>Step 2: make your own code in <code class="docutils literal notranslate"><span class="pre">\src</span></code> as package<a class="headerlink" href="#step-2-make-your-own-code-in-src-as-package" title="Permalink to this headline">¶</a></h2>
+<p>Making the frequently used codes as package. In this example, <code class="docutils literal notranslate"><span class="pre">data_generator.py</span></code> and
+<code class="docutils literal notranslate"><span class="pre">md_generator.py</span></code> are made as the source code, by including a file <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> in the
+same directory and run the following bash in the root directory. <code class="docutils literal notranslate"><span class="pre">-e</span></code> make the source
+code editable.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3 -m pip install -e .
+</pre></div>
+</div>
+</div>
+<div class="section" id="step-3-run-tests">
+<h2>Step 3: run tests<a class="headerlink" href="#step-3-run-tests" title="Permalink to this headline">¶</a></h2>
+<p>‘No test no code’, simple example should be checked in <code class="docutils literal notranslate"><span class="pre">\test</span></code> directory.</p>
+<p>Run the test suite</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pytest .
+</pre></div>
+</div>
+</div>
+<div class="section" id="step-4-run-your-script-in-scripts">
+<h2>Step 4: run your script in <code class="docutils literal notranslate"><span class="pre">\scripts</span></code><a class="headerlink" href="#step-4-run-your-script-in-scripts" title="Permalink to this headline">¶</a></h2>
+<p>In the example, two files are included. <code class="docutils literal notranslate"><span class="pre">make_plot.py</span></code> generate the example plots. which saves the plots under the `docs\source\plots’.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> scripts
+python make_plot.py
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">generate_md.py</span></code> generate the markdown file with python, inclxuding the plots just created
+in the last step into a markdown note. The markdown files can also be hand made by creating the new file ending with <code class="docutils literal notranslate"><span class="pre">.md</span></code>. In order to convert the markdown files into html, all markdown files neeed to be under the <code class="docutils literal notranslate"><span class="pre">\docs</span></code> directory.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python generate_md.py
+</pre></div>
+</div>
+</div>
+<div class="section" id="step-5-build-documentation">
+<h2>Step 5: build documentation<a class="headerlink" href="#step-5-build-documentation" title="Permalink to this headline">¶</a></h2>
+<p>Auto-generate documentation.
+<code class="docutils literal notranslate"><span class="pre">conf.py</span></code> already incldued the necessary extentions to convert markdown files into html files.
+<code class="docutils literal notranslate"><span class="pre">index.rst</span></code> files should be changed to include all the markdown files that you wanna convert
+into html files.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># activate the environment first</span>
+conda activate python_example <span class="c1"># the naem of your env</span>
+<span class="nb">cd</span> docs/
+make html
+</pre></div>
+</div>
+<p>The generated HTML files are stored in <code class="docutils literal notranslate"> <span class="pre">docs/build/html</span></code>.</p>
+</div>
+<div class="section" id="step-6-upload-html-and-build-webpage">
+<h2>Step 6: upload html and build webpage<a class="headerlink" href="#step-6-upload-html-and-build-webpage" title="Permalink to this headline">¶</a></h2>
+<p>Two ways to build your webpage with your prelimilary results.</p>
+<p><strong>The first way</strong> is to use <code class="docutils literal notranslate"><span class="pre">GitHub</span> <span class="pre">Page</span></code>. This project include a <a class="reference external" href="https://github.com/liuquan18/html_example/blob/393fdd8b83b339c7f0ea48b9a4388d8efb2678b2/.github/workflows/ci.yml#L1">ci.yml</a> to aumatically build the webpage. When commits are pushed or merged to the remote repository, a new version of the documentation is build and published on <a class="reference external" href="https://liuquan18.github.io/python_example/">GitHub pages</a>.
+if you want to disable this more <em>pulic</em> way, you can change it in the settings of the repository.</p>
+<p><strong>The second way</strong> for the DKRZ users, who has the swift account on levante. the following bash files named as <code class="docutils literal notranslate"><span class="pre">upload_html.sh</span></code> could be included in the <code class="docutils literal notranslate"><span class="pre">docs</span></code> directory</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1"># activate environment</span>
+conda activate TelSeason
+module load py-python-swiftclient
+
+<span class="c1"># go to </span>
+<span class="nb">cd</span> /docs
+<span class="c1"># upload</span>
+swift upload python_example build <span class="c1"># change the name of the container here</span>
+</pre></div>
+</div>
+<p>then run the script on levante to upload the html files to swift.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> docs
+./upload_html.sh
+</pre></div>
+</div>
+<p>You can use swiftbrowser to check the files. To make the html as a webpage, the container need be chaged into a public. Then the webpage will be published <a class="reference external" href="https://swift.dkrz.de/v1/dkrz_e2efc288-3ba0-499b-9bd8-d1a2580fd987/python_example/build/html/index.html">here</a></p>
+<blockquote>
+<div><p>Note that the link the different from just copying the link from swift_browser. Update the link above with the correct URL when you set the container on swift as public.</p>
+</div></blockquote>
+<hr class="docutils" />
+<p>Further information</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://setuptools.pypa.io">Setuptools - library to facilitate packaging Python projects</a></p></li>
+<li><p><a class="reference external" href="https://sphinx-doc.org">Sphinx - Python documentation generator</a></p></li>
+<li><p><a class="reference external" href="https://docs.pytest.org">pytest - A full-featured Python testing framewor</a></p></li>
+<li><p><a class="reference external" href="https://github.com/features/actions">GitHub Actions - automate your software workflows</a></p></li>
+<li><p><a class="reference external" href="https://pages.github.com">GitHub Pages - Host web sites directly from your repository</a></p></li>
+<li><p><a class="reference external" href="https://docs.dkrz.de/doc/datastorage/swift/index.html">DKRZ swift object storage</a></p></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">python_example</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="note_example.html">example note</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">how to make a page like this</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#step-1-create-the-environment">Step 1: create the environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-2-make-your-own-code-in-src-as-package">Step 2: make your own code in <code class="docutils literal notranslate"><span class="pre">\src</span></code> as package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-3-run-tests">Step 3: run tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-4-run-your-script-in-scripts">Step 4: run your script in <code class="docutils literal notranslate"><span class="pre">\scripts</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-5-build-documentation">Step 5: build documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-6-upload-html-and-build-webpage">Step 6: upload html and build webpage</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="note_example.html" title="previous chapter">example note</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, mypackage developers.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/How_to_have_this_page_too.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
