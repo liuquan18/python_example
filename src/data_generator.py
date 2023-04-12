@@ -12,6 +12,6 @@ def generatexy():
 
     """
     x = [1,2,3,4,5,6,7,8,9,10]
-    radom_letters = 'claraBaley'
+    radom_letters = 'blablabla'
     y = [ord(l) for l in radom_letters]
     return x,y
